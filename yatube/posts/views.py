@@ -125,7 +125,8 @@ def follow_index(request):
 def profile_follow(request, username):
     author = User.objects.get(username=username)
     user = request.user
-    if user != author:
+    follow = Follow.objects.filter(user=user, author=author)
+    if user != author and not follow.exists():
         Follow.objects.create(user=user, author=author)
     return redirect("posts:profile", username=username)
 
