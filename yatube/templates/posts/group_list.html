@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+  Записи сообщества 
+  {% for post in page_obj %}
+    {% if forloop.first %}
+      {{ post.group.title }}
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+{% block content %}
+  <!-- класс py-5 создает отступы сверху и снизу блока -->
+  <div class="container py-5">
+    {% for post in page_obj %}
+    {% if forloop.first %}
+      <h1>{{ post.group.title }}</h1>
+      <p>{{ post.group.description }}</p>
+    {% endif %}
+      <article>
+        {% include 'posts/includes/cart.html' %}
+      </article>
+      {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+    {% include 'posts/includes/paginator.html' %}
+  </div>
+{% endblock%}
