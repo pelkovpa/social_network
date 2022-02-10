@@ -13,6 +13,10 @@ class Group(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = "Группа"
+        verbose_name_plural = "Группы"
+
 
 class Post(CreatedModel):
     text = models.TextField("Текст поста", help_text="Введите текст поста")
@@ -51,6 +55,13 @@ class Comment(CreatedModel):
     )
     text = models.TextField()
 
+    def __str__(self):
+        return self.text[:15]
+
+    class Meta:
+        verbose_name = "Комментарий"
+        verbose_name_plural = "Комментарии"
+
 
 class Follow(models.Model):
     # Пользователь, который подписывается
@@ -61,3 +72,10 @@ class Follow(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="following"
     )
+
+    def __str__(self):
+        return self.user
+
+    class Meta:
+        verbose_name = "Подписчик"
+        verbose_name_plural = "Подписчики"

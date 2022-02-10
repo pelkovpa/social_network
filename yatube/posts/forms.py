@@ -10,6 +10,11 @@ class PostForm(forms.ModelForm):
             "group",
             "image",
         )
+        labels = {
+            "text": "Текст нового поста",
+            "group": "Группа, к которой будет относиться пост",
+            "image": "Картинка для поста",
+        }
 
 
 class CommentForm(forms.ModelForm):

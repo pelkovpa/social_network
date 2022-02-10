@@ -62,7 +62,7 @@ class PostURLTests(TestCase):
         response = self.author_client.get("/posts/1/edit/")
         self.assertEqual(response.status_code, HTTPStatus.OK)
 
-    def test_group_list_list_url_exists_at_desired_location(self):
+    def test_unexisting_page_url_exists_at_desired_location(self):
         """Страница /unexisting_page/ отуствует."""
         response = self.guest_client.get("/unexisting_page/")
         self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
