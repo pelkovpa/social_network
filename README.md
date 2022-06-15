@@ -15,7 +15,7 @@ git clone git@github.com:pelkovpa/hw05_final.git
 ```
 
 ```
-cd yatube
+cd hw05_final
 ```
 
 Cоздать и активировать виртуальное окружение:
@@ -36,6 +36,10 @@ python3 -m pip install --upgrade pip
 
 ```
 pip install -r requirements.txt
+```
+
+```
+cd yatube
 ```
 
 Выполнить миграции:
