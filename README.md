@@ -3,8 +3,7 @@
 
 * Python 3.8
 * Django 2.2
-* Django Rest Framework 3.12
-* Simple JWT
+
 
 ### Как запустить проект:
 
